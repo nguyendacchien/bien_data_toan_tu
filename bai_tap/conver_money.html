@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+  <tr>
+    <th>Amount</th>
+    <th>From Currency</th>
+    <th>To Currency</th>
+    <td></td>
+  </tr>
+  <tr>
+    <td><input type="number" onchange="converMoney()" id="input"></td>
+    <td><select name="" id="from">
+      <option value="23000">VND</option>
+      <option value="1">USD</option>
+    </select></td>
+    <td><select name="" id="to">
+      <option value="1">USD</option>
+      <option value="23000">VND</option>
+    </select></td>
+
+    <td><button onclick="converMoney()">conver</button></td>
+  </tr>
+  <tr>
+    <td colspan="4"><h2>kết quả: <p id="result"></p> </h2></td>
+  </tr>
+</table>
+<script>
+  function converMoney(){
+    let money = document.getElementById('input').value
+    let to = document.getElementById('to').value
+    let from = document.getElementById('from').value
+    result = money *to/from
+    document.getElementById('result').innerHTML =result
+
+  }
+</script>
+</body>
+</html>
